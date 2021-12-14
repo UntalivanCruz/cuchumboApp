@@ -1,0 +1,29 @@
+<div nz-row nzJustify="center">
+  <h2>Regalos</h2>
+</div>
+<div nz-row nzJustify="center">
+  <div nz-col nzSpan="24">
+    <nz-table #basicTable [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th>Descripcion</th>
+          <th>Monto</th>
+          <th>Sorpresa</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.descripcion }}</td>
+          <td>{{ data.monto }}</td>
+          <td><label nz-checkbox nzDisabled [ngModel]="data.sorpresa"></label></td>
+          <td>
+            <a><i nz-icon nzType="edit" nzTheme="outline"></i></a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
